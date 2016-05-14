@@ -1,17 +1,17 @@
 <?php
 session_start();
-
-//×¢ÏúµÇÂ¼
+//header("Content-type:text/html;charset=utf-8");
+//æ³¨é”€ç™»å½•
 /*if($_GET['action'] == "logout"){
     unset($_SESSION['userid']);
     unset($_SESSION['username']);
-    echo '×¢ÏúµÇÂ¼³É¹¦£¡µã»÷´Ë´¦ <a href="login.html">µÇÂ¼</a>';
+    echo 'æ³¨é”€ç™»å½•æˆåŠŸï¼ç‚¹å‡»æ­¤å¤„ <a href="login.html">ç™»å½•</a>';
     exit;
 }*/
 
-//µÇÂ¼
+//ç™»å½•
 /*if(!isset($_POST['submit'])){
-    exit('·Ç·¨·ÃÎÊ!');
+    exit('éæ³•è®¿é—®!');
 }*/
 /*$username = htmlspecialchars($_POST['username']);
 $password = MD5($_POST['password']);*/
@@ -21,19 +21,19 @@ $username = htmlspecialchars($_POST['username']);
 $password = MD5($_POST['password']);
 
 
-//°üº¬Êı¾İ¿âÁ¬½ÓÎÄ¼ş
+//åŒ…å«æ•°æ®åº“è¿æ¥æ–‡ä»¶
 include('conn.php');
-//¼ì²âÓÃ»§Ãû¼°ÃÜÂëÊÇ·ñÕıÈ·
+//æ£€æµ‹ç”¨æˆ·ååŠå¯†ç æ˜¯å¦æ­£ç¡®
 $check_query = mysql_query("select id from user where username='$username' and pass='$password' 
 limit 1");
 if($result = mysql_fetch_array($check_query)){
-    //µÇÂ¼³É¹¦
+    //ç™»å½•æˆåŠŸ
     $_SESSION['username'] = $username;
     $_SESSION['userid'] = $result['id'];
-    echo $username,' »¶Ó­Äã£¡½øÈë <a href="my.php">ÓÃ»§ÖĞĞÄ</a><br />';
-    echo 'µã»÷´Ë´¦ <a href="login.php?action=logout">×¢Ïú</a> µÇÂ¼£¡<br />';
+    echo $username,' æ¬¢è¿ä½ ï¼è¿›å…¥ <a href="my.php">ç”¨æˆ·ä¸­å¿ƒ</a><br />';
+    echo 'ç‚¹å‡»æ­¤å¤„ <a href="login.php?action=logout">æ³¨é”€</a> ç™»å½•ï¼<br />';
     exit;
 } else {
-    exit('µÇÂ¼Ê§°Ü£¡µã»÷´Ë´¦ <a href="javascript:history.back(-1);">·µ»Ø</a> ÖØÊÔ');
+    exit('ç™»å½•å¤±è´¥ï¼ç‚¹å‡»æ­¤å¤„ <a href="javascript:history.back(-1);">è¿”å›</a> é‡è¯•');
 }
 ?>
