@@ -5,8 +5,8 @@
 
 	include('conn.php');
 	$sql = "INSERT INTO task(task_id,msg,username,time) VALUES (null,'$msg','$username','$time')";
-	if(mysql_query($sql,$conn)){
-    echo "sucess";
+	if(mysql_query($sql)){
+    echo "success";
 } else {
     echo 'false';
 }

@@ -1,13 +1,13 @@
 <?php
 session_start();
-//header("Content-type:text/html;charset=utf-8");
+header("Content-type:text/html;charset=utf-8");
 //注销登录
-/*if($_GET['action'] == "logout"){
+if(!is_null($_GET['action']) & $_GET['action'] == "logout"){
     unset($_SESSION['userid']);
     unset($_SESSION['username']);
     echo '注销登录成功！点击此处 <a href="login.html">登录</a>';
     exit;
-}*/
+}
 
 //登录
 /*if(!isset($_POST['submit'])){
