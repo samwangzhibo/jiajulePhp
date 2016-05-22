@@ -22,3 +22,4 @@ this is a Php Web Platform of my other project  [家居乐](https://github.com/s
 
 
 ##### 3. do as gif
+![sreenshot](https://github.com/samwangzhibo/jiajuleAndroid/blob/master/jiajule.gif)
